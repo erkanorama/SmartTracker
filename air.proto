@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+// Define the protocol buffers for air pollution data
+package air;
+
+// Service definition for retrieving air pollution data
+service AirPollutionService {
+    // Method to get air quality data
+    rpc GetAirQuality (AirQualityRequest) returns (AirQualityResponse) {}
+}
+
+// Request message for getting air quality data
+message AirQualityRequest {}
+
+// Response message containing air quality data
+message AirQualityResponse {
+    float pm25 = 1; // numbers such as 1 represent a field number to allow the system to differentiate elements
+    float pm10 = 2; 
+    float co2 = 3; 
+    float no2 = 4; 
+}
+
+/*
+***Glossary***
+pm25 = particulate matter 2.5
+pm10 = particulate matter 10
+co2 = carbon dioxide
+no2 = nitrogen dioxide
+*/

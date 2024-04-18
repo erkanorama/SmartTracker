@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+// Define the protocol buffers for water pollution data
+package water;
+
+// Service definition for retrieving water quality data
+service WaterPollutionService {
+    // Method to get water quality data
+    rpc GetWaterQuality (WaterQualityRequest) returns (WaterQualityResponse) {}
+}
+
+// Request message for getting water quality data
+message WaterQualityRequest {}
+
+// Response message containing water quality data
+message WaterQualityResponse {
+    float pH = 1; // numbers such as 1 represent a field number to allow system diffirentiate elements
+    float dissolved_oxygen = 2;
+    float turbidity = 3;
+}
+
+/*
+***Glossary***
+pH = measure of acidity or alkalinity of water
+dissolved_oxygen = amount of oxygen dissolved in water
+turbidity = clarity or cloudiness of water
+*/

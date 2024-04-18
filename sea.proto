@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+// Define the protocol buffers for sea pollution data
+package sea;
+
+// Service definition for retrieving sea pollution data
+service SeaPollutionService {
+    // Method to get sea pollution data
+    rpc GetSeaPollutionData (SeaPollutionRequest) returns (SeaPollutionResponse) {}
+}
+
+// Request message for getting sea pollution data
+message SeaPollutionRequest {}
+
+// Response message containing sea pollution data
+message SeaPollutionResponse {
+    float mercury_level = 1; // numbers such as 1 represent a field number to allow the system to differentiate elements
+    float lead_level = 2; 
+    float arsenic_level = 3; 
+}
+
+/*
+***Glossary***
+mercury_level = level of mercury contamination
+lead_level = level of lead contamination
+arsenic_level = level of arsenic contamination
+*/
