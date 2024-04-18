@@ -1,2 +1,2 @@
-# My_Portfolio
+# SmartTracker
 Coursera Case Study
